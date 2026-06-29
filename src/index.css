@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 36 44% 97%;
+    --foreground: 20 14% 24%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 20 14% 24%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 20 14% 24%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 18 38% 62%;
+    --primary-foreground: 36 44% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 28 48% 92%;
+    --secondary-foreground: 20 14% 30%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 30 30% 94%;
+    --muted-foreground: 24 10% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 350 40% 88%;
+    --accent-foreground: 20 14% 30%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 28 30% 88%;
+    --input: 28 30% 88%;
+    --ring: 18 38% 62%;
 
     --radius: 0.5rem;
 
@@ -97,5 +97,32 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Golos Text", sans-serif;
   }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Cormorant", serif;
+  }
+  .tracking-luxe {
+    letter-spacing: 0.35em;
+  }
+}
+
+@keyframes float-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.reveal {
+  opacity: 0;
+}
+.reveal.in-view {
+  animation: float-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
