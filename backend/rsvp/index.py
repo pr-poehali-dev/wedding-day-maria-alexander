@@ -5,8 +5,8 @@ import urllib.request
 
 
 BOTS = [
-    {'token_env': 'TELEGRAM_BOT_TOKEN_1', 'chat_id_env': 'TELEGRAM_CHAT_ID_1'},
-    {'token_env': 'TELEGRAM_BOT_TOKEN_2', 'chat_id_env': 'TELEGRAM_CHAT_ID_2'},
+    {'token_env': 'TELEGRAM_BOT_TOKEN_1', 'chat_id': '789210376'},
+    {'token_env': 'TELEGRAM_BOT_TOKEN_2', 'chat_id': '291039408'},
 ]
 
 
@@ -46,7 +46,7 @@ def handler(event: dict, context) -> dict:
     errors = []
     for bot in BOTS:
         token = os.environ.get(bot['token_env'], '')
-        chat_id = os.environ.get(bot['chat_id_env'], '')
+        chat_id = bot['chat_id']
         if token and chat_id:
             try:
                 send_telegram(token, chat_id, text)
