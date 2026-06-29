@@ -20,7 +20,7 @@ const PHOTO_TIMING =
 const PHOTO_DRESS =
   'https://s6.iimage.su/s/29/gpJmjeUxN7MG8rvJOjuvRjRc2KeH2ZeTy74ySpLnK.jpg';
 const PHOTO_GROOM =
-  'https://i127.fastpic.org/thumb/2026/0630/5f/4e626b67d505e3cf5cc4e3f69fb66a5f.jpeg';
+  'https://iili.io/C5V1kqF.jpg';
 const PHOTO_BRIDE =
   'https://iili.io/C5VYQj9.jpg';
 
