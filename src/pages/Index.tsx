@@ -3,12 +3,7 @@ import Icon from '@/components/ui/icon';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+
 import { toast } from '@/hooks/use-toast';
 
 const RSVP_URL = 'https://functions.poehali.dev/a460a939-d04f-44b4-8430-eafecc41020f';
@@ -299,34 +294,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* FAQ / КОНТАКТЫ */}
+      {/* КОНТАКТЫ */}
       <section className="py-24 sm:py-32">
         <div className="container max-w-3xl">
           <Reveal>
             <div className="text-center mb-14">
-              <p className="font-sans tracking-luxe text-xs uppercase text-primary mb-5">Вопросы и контакты</p>
-              <h2 className="font-display font-light text-4xl sm:text-6xl">FAQ</h2>
+              <p className="font-sans tracking-luxe text-xs uppercase text-primary mb-5">Контакты</p>
+              <h2 className="font-display font-light text-4xl sm:text-6xl">Свяжитесь с нами</h2>
             </div>
-            <Accordion type="single" collapsible className="mb-16">
-              <AccordionItem value="q1">
-                <AccordionTrigger className="font-display text-xl">Можно ли прийти с детьми?</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Конечно! Будем рады видеть всю вашу семью. Укажите количество гостей в форме.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="q2">
-                <AccordionTrigger className="font-display text-xl">Будет ли парковка?</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Да, на территории усадьбы «Подгорье» есть бесплатная парковка для гостей.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="q3">
-                <AccordionTrigger className="font-display text-xl">Когда нужно подтвердить участие?</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Пожалуйста, заполните форму до 1 августа 2026 года.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
           </Reveal>
 
           <div className="grid sm:grid-cols-2 gap-10">
