@@ -247,7 +247,7 @@ const Index = () => {
             <p className="font-sans tracking-luxe text-xs uppercase text-primary mb-5">Подтверждение</p>
             <h2 className="font-display font-light text-4xl sm:text-6xl mb-4">Будете с нами?</h2>
             <p className="text-muted-foreground mb-10">
-              Пожалуйста, подтвердите присутствие до 1 августа
+              Пожалуйста, подтвердите присутствие до 10 августа
             </p>
             <form onSubmit={submit} className="space-y-6 text-left">
               <div>
