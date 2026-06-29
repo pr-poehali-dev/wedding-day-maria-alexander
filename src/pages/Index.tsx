@@ -88,14 +88,20 @@ function useCountdown(target: Date) {
 const Index = () => {
   const [name, setName] = useState('');
   const [count, setCount] = useState('');
-  const [drink, setDrink] = useState('');
+  const [drinks_selected, setDrinksSelected] = useState<string[]>([]);
   const cd = useCountdown(WEDDING_DATE);
 
   const [sending, setSending] = useState(false);
 
+  const toggleDrink = (d: string) => {
+    setDrinksSelected(prev =>
+      prev.includes(d) ? prev.filter(x => x !== d) : [...prev, d]
+    );
+  };
+
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name || !count || !drink) {
+    if (!name || !count || drinks_selected.length === 0) {
       toast({ title: 'Заполните все поля', description: 'Имя, количество гостей и напиток' });
       return;
     }
@@ -104,13 +110,13 @@ const Index = () => {
       const res = await fetch(RSVP_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, count, drink }),
+        body: JSON.stringify({ name, count, drink: drinks_selected.join(', ') }),
       });
       if (res.ok) {
         toast({ title: 'Спасибо!', description: 'Ваше присутствие подтверждено ❤' });
         setName('');
         setCount('');
-        setDrink('');
+        setDrinksSelected([]);
       } else {
         toast({ title: 'Ошибка', description: 'Попробуйте ещё раз или свяжитесь с нами' });
       }
@@ -267,20 +273,20 @@ const Index = () => {
                 />
               </div>
               <div>
-                <Label className="text-sm mb-2 block">Предпочтения по напиткам</Label>
+                <Label className="text-sm mb-2 block">Предпочтения по напиткам <span className="text-muted-foreground">(можно выбрать несколько)</span></Label>
                 <div className="grid grid-cols-2 gap-3">
                   {drinks.map((d) => (
                     <button
                       type="button"
                       key={d}
-                      onClick={() => setDrink(d)}
+                      onClick={() => toggleDrink(d)}
                       className={`py-3 rounded-md border text-sm transition-colors ${
-                        drink === d
+                        drinks_selected.includes(d)
                           ? 'bg-primary text-primary-foreground border-primary'
                           : 'bg-background border-border hover:border-primary'
                       }`}
                     >
-                      {d}
+                      {drinks_selected.includes(d) && '✓ '}{d}
                     </button>
                   ))}
                 </div>
