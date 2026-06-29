@@ -20,7 +20,7 @@ const PHOTO_TIMING =
 const PHOTO_DRESS =
   'https://s6.iimage.su/s/29/gpJmjeUxN7MG8rvJOjuvRjRc2KeH2ZeTy74ySpLnK.jpg';
 const PHOTO_GROOM =
-  'https://cdn.poehali.dev/projects/3f8224f3-f775-4977-8173-06227433c2b1/files/1d0df82c-c784-4d13-b2aa-1f5bb3773bc4.jpg';
+  'https://s6.iimage.su/s/29/gBcgyNKx5AFdBSeXV9Bd6gB047g38E6LmyLXqzH4m.jpg';
 const PHOTO_BRIDE =
   'https://cdn.poehali.dev/projects/3f8224f3-f775-4977-8173-06227433c2b1/files/29c0a00f-fcb5-48e3-b8bc-dca18fb647a4.jpg';
 
