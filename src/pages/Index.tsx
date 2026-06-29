@@ -33,6 +33,8 @@ const palette = [
   { name: 'Кремовый', color: '#F7EEE2' },
   { name: 'Шампань', color: '#EAD9BE' },
   { name: 'Чайная роза', color: '#D9A38E' },
+  { name: 'Нежно-фисташковый', color: '#D4E8D0' },
+  { name: 'Мятный', color: '#C8E6C0' },
 ];
 
 const timeline = [
