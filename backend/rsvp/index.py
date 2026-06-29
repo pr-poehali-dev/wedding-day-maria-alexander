@@ -1,6 +1,8 @@
-"""Обработка RSVP-заявок: отправка уведомлений в Telegram двум получателям."""
+"""Обработка RSVP-заявок: сохранение в БД и отправка уведомлений в Telegram."""
 import json
+import os
 import urllib.request
+import psycopg2
 
 
 BOTS = [
@@ -34,6 +36,16 @@ def handler(event: dict, context) -> dict:
 
     if not name or not count or not drink:
         return {'statusCode': 400, 'headers': cors, 'body': {'error': 'Заполните все поля'}}
+
+    conn = psycopg2.connect(os.environ['DATABASE_URL'])
+    cur = conn.cursor()
+    cur.execute(
+        "INSERT INTO rsvp_guests (name, count, drink) VALUES (%s, %s, %s)",
+        (name, int(count), drink)
+    )
+    conn.commit()
+    cur.close()
+    conn.close()
 
     text = (
         f'\U0001f38a <b>Новая RSVP-заявка!</b>\n\n'
