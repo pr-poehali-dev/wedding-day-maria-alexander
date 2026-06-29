@@ -22,7 +22,7 @@ const PHOTO_DRESS =
 const PHOTO_GROOM =
   'https://i127.fastpic.org/thumb/2026/0630/5f/4e626b67d505e3cf5cc4e3f69fb66a5f.jpeg';
 const PHOTO_BRIDE =
-  'https://iili.io/C5VYQj9.md.jpg';
+  'https://iili.io/C5VYQj9.jpg';
 
 const WEDDING_DATE = new Date('2026-08-29T14:00:00');
 
