@@ -14,7 +14,7 @@ import { toast } from '@/hooks/use-toast';
 const RSVP_URL = 'https://functions.poehali.dev/a460a939-d04f-44b4-8430-eafecc41020f';
 
 const PHOTO_HERO =
-  'https://cdn.poehali.dev/projects/3f8224f3-f775-4977-8173-06227433c2b1/files/8641e436-e0e9-460c-b6ff-3240b1a1a1ef.jpg';
+  'https://s6.iimage.su/s/29/gXZGA2yx6PhcbyR1SC04lz7OKokZ0gf6IBueRujkZ.jpg';
 const PHOTO_TIMING =
   'https://cdn.poehali.dev/projects/3f8224f3-f775-4977-8173-06227433c2b1/files/8b42b4ee-c52f-452b-9865-ccdaae7a82ba.jpg';
 const PHOTO_DRESS =
