@@ -18,7 +18,7 @@ const PHOTO_HERO =
 const PHOTO_TIMING =
   'https://s6.iimage.su/s/29/grqmSfex9THM8o6cqi7zDgGuYOGPmSYnIF3Lg1nNN.jpg';
 const PHOTO_DRESS =
-  'https://cdn.poehali.dev/projects/3f8224f3-f775-4977-8173-06227433c2b1/files/93f2e710-287d-434b-8f19-bc723957645e.jpg';
+  'https://s6.iimage.su/s/29/gpJmjeUxN7MG8rvJOjuvRjRc2KeH2ZeTy74ySpLnK.jpg';
 const PHOTO_GROOM =
   'https://cdn.poehali.dev/projects/3f8224f3-f775-4977-8173-06227433c2b1/files/1d0df82c-c784-4d13-b2aa-1f5bb3773bc4.jpg';
 const PHOTO_BRIDE =
