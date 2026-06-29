@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Missing fields",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "", "count": "", "drink": ""},
+      "expectedStatus": 400
+    },
+    {
+      "name": "Valid RSVP",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "Тест Гость", "count": "2", "drink": "Белое вино"},
+      "expectedStatus": 200
+    }
+  ]
+}

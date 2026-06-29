@@ -11,6 +11,8 @@ import {
 } from '@/components/ui/accordion';
 import { toast } from '@/hooks/use-toast';
 
+const RSVP_URL = 'https://functions.poehali.dev/a460a939-d04f-44b4-8430-eafecc41020f';
+
 const PHOTO_HERO =
   'https://cdn.poehali.dev/projects/3f8224f3-f775-4977-8173-06227433c2b1/files/8641e436-e0e9-460c-b6ff-3240b1a1a1ef.jpg';
 const PHOTO_TIMING =
@@ -87,16 +89,34 @@ const Index = () => {
   const [drink, setDrink] = useState('');
   const cd = useCountdown(WEDDING_DATE);
 
-  const submit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !count || !drink) {
       toast({ title: 'Заполните все поля', description: 'Имя, количество гостей и напиток' });
       return;
     }
-    toast({ title: 'Спасибо!', description: 'Ваше присутствие подтверждено ❤' });
-    setName('');
-    setCount('');
-    setDrink('');
+    setSending(true);
+    try {
+      const res = await fetch(RSVP_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, count, drink }),
+      });
+      if (res.ok) {
+        toast({ title: 'Спасибо!', description: 'Ваше присутствие подтверждено ❤' });
+        setName('');
+        setCount('');
+        setDrink('');
+      } else {
+        toast({ title: 'Ошибка', description: 'Попробуйте ещё раз или свяжитесь с нами' });
+      }
+    } catch {
+      toast({ title: 'Ошибка сети', description: 'Проверьте интернет-соединение' });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -263,8 +283,8 @@ const Index = () => {
                   ))}
                 </div>
               </div>
-              <Button type="submit" className="w-full py-6 text-base">
-                Подтвердить присутствие
+              <Button type="submit" disabled={sending} className="w-full py-6 text-base">
+                {sending ? 'Отправляем...' : 'Подтвердить присутствие'}
               </Button>
             </form>
           </Reveal>
