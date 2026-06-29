@@ -16,7 +16,7 @@ const RSVP_URL = 'https://functions.poehali.dev/a460a939-d04f-44b4-8430-eafecc41
 const PHOTO_HERO =
   'https://s6.iimage.su/s/29/gXZGA2yx6PhcbyR1SC04lz7OKokZ0gf6IBueRujkZ.jpg';
 const PHOTO_TIMING =
-  'https://cdn.poehali.dev/projects/3f8224f3-f775-4977-8173-06227433c2b1/files/8b42b4ee-c52f-452b-9865-ccdaae7a82ba.jpg';
+  'https://s6.iimage.su/s/29/grqmSfex9THM8o6cqi7zDgGuYOGPmSYnIF3Lg1nNN.jpg';
 const PHOTO_DRESS =
   'https://cdn.poehali.dev/projects/3f8224f3-f775-4977-8173-06227433c2b1/files/93f2e710-287d-434b-8f19-bc723957645e.jpg';
 const PHOTO_GROOM =
